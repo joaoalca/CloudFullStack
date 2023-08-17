@@ -23,6 +23,7 @@ function App() {
   //  []);
 
   const teste = async () => {
+    console.log('teste');
     const url = 'http://10.0.132.252:8000/users';
     const response = await fetch(url);
     console.log(url);
