@@ -6,11 +6,29 @@ function App() {
 
   const [data, setData] = useState([]);
 
+
   useEffect(() => {
-    fetch('http://10.0.132.252:8000/users')
-    .then(response => console.log(response))
-    .then(data => setData(data));
-  }, []);
+
+    teste();
+
+  });
+
+  // useEffect(() => {
+  //   fetch('http://10.0.132.252:8000/users')
+  //   .then(response => console.log(response))
+  //   .then(data => setData(data));
+  // },
+
+
+  //  []);
+
+  const teste = async () => {
+
+    const response = await fetch('http://10.0.132.252:8000/users');
+    const data = await response.json();
+    console.log(data);
+
+  }
 
   let users = data.map((user) => {
     return <User key={user.id} name={user.name} age={user.age} date={user.data} />
