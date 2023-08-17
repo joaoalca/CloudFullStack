@@ -7,11 +7,12 @@ function App() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch('10.0.132.252:8000/users')
-    .then(response => response.json())
-    .then(data => setData(data));
+    fetch('http://10.0.132.252:8000/users') // Add 'http://' before the IP address
+      .then(response => response.json())
+      .then(data => setData(data))
+      .catch(error => console.error('Error fetching data:', error));
   }, []);
-
+  
   let users = data.map((user) => {
     return <User key={user.id} name={user.name} age={user.age} date={user.data} />
   });
@@ -22,7 +23,7 @@ function App() {
     const age = e.target.age.value;
     const newUser = {name, age};
     console.log(newUser)
-    fetch('10.0.132.252:8000/users', {
+    fetch('http://10.0.132.252:8000/users', {
       method: 'POST',
       body: JSON.stringify(newUser),
       headers: {
