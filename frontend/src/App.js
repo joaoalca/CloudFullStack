@@ -53,7 +53,7 @@ function App() {
       </div>
       <div>
         <h2>Add User</h2>
-        <form onSubmit={handleSubmit}>
+        {/* <form onSubmit={handleSubmit}> */}
         <fieldset>
          <label>
            <p>Name</p>
@@ -65,7 +65,7 @@ function App() {
          </label>
        </fieldset>
        <button type="submit">Submit</button>
-        </form>
+        {/* </form> */}
       </div>
     </>
   );
