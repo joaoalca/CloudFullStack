@@ -25,7 +25,7 @@ function App() {
   const teste = async () => {
 
     const response = await fetch('10.0.132.252:8000/users');
-    const data = await response.json();
+    const data = await response;
     console.log(data);
 
   }
