@@ -17,6 +17,7 @@ function App() {
     });
   }
 
+  reqData();
   // useEffect(() => {
   //   fetch('http://10.0.132.252:8000/users') // Add 'http://' before the IP address
   //     .then(response => response.json())
@@ -49,7 +50,6 @@ function App() {
     <>
       <div className="App" id = "users">
         <h2>Users</h2>
-        {() => reqData()}
       </div>
       <div>
         <h2>Add User</h2>
