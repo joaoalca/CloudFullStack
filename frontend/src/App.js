@@ -8,7 +8,7 @@ function App() {
 
   useEffect(() => {
     fetch('10.0.132.252:8000/users')
-    .then(response => response.json())
+    .then(response => console.log(response))
     .then(data => setData(data));
   }, []);
 
