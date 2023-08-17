@@ -7,7 +7,7 @@ function App() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch('hhtp://10.0.132.252:8000/users')
+    fetch('http://10.0.132.252:8000/users')
     .then(response => console.log(response))
     .then(data => setData(data));
   }, []);
