@@ -7,7 +7,7 @@ function App() {
   const [data, setData] = useState([]);
 
   const reqData = () => { 
-    fetch('https://jsonplaceholder.typicode.com/posts/1')
+    fetch('http://10.0.132.252:8000/users')
     .then(response => response.json())
     .then(data => {
       console.log('Response data:', data);
