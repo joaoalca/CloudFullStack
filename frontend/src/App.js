@@ -46,7 +46,8 @@ function App() {
       method: 'POST',
       body: JSON.stringify(newUser),
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        credentials: 'same-origin'
       }
     }).then(response => response.json())
       .then(setData([...data, newUser]));
