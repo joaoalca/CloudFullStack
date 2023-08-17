@@ -9,6 +9,7 @@ function App() {
   useEffect(() => {
     fetch('http://10.0.132.252:8000/users') // Add 'http://' before the IP address
       .then(response => response.json())
+      .then(data => console.log(data))
       .then(data => setData(data))
       .catch(error => console.error('Error fetching data:', error));
   }, []);
