@@ -6,39 +6,50 @@ function App() {
 
   const [data, setData] = useState([]);
 
-  useEffect(() => {
-    fetch('http://10.0.132.252:8000/users') // Add 'http://' before the IP address
-      .then(response => response.json())
-      .then(data => console.log(data))
-      .then(data => setData(data))
-      .catch(error => console.error('Error fetching data:', error));
-  }, []);
-  
-  let users = data.map((user) => {
-    return <User key={user.id} name={user.name} age={user.age} date={user.data} />
-  });
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const name = e.target.name.value;
-    const age = e.target.age.value;
-    const newUser = {name, age};
-    console.log(newUser)
-    fetch('http://10.0.132.252:8000/users', {
-      method: 'POST',
-      body: JSON.stringify(newUser),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    }).then(response => response.json())
-      .then(setData([...data, newUser]));
+  const reqData = () => { 
+    fetch('https://jsonplaceholder.typicode.com/posts/1')
+    .then(response => response.json())
+    .then(data => {
+      console.log('Response data:', data);
+    })
+    .catch(error => {
+      console.error('Error fetching data:', error);
+    });
   }
+
+  // useEffect(() => {
+  //   fetch('http://10.0.132.252:8000/users') // Add 'http://' before the IP address
+  //     .then(response => response.json())
+  //     .then(data => console.log(data))
+  //     .then(data => setData(data))
+  //     .catch(error => console.error('Error fetching data:', error));
+  // }, []);
+  
+  // let users = data.map((user) => {
+  //   return <User key={user.id} name={user.name} age={user.age} date={user.data} />
+  // });
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   const name = e.target.name.value;
+  //   const age = e.target.age.value;
+  //   const newUser = {name, age};
+  //   console.log(newUser)
+  //   fetch('http://10.0.132.252:8000/users', {
+  //     method: 'POST',
+  //     body: JSON.stringify(newUser),
+  //     headers: {
+  //       'Content-Type': 'application/json'
+  //     }
+  //   }).then(response => response.json())
+  //     .then(setData([...data, newUser]));
+  // }
 
   return (
     <>
       <div className="App" id = "users">
         <h2>Users</h2>
-        {users}
+        {() => reqData()}
       </div>
       <div>
         <h2>Add User</h2>
