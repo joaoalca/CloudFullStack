@@ -24,7 +24,7 @@ function App() {
 
   const teste = async () => {
     console.log('teste');
-    const url = 'http://ec2-3-217-115-32.compute-1.amazonaws.com:8000/users';
+    const url = '/users';
     console.log(url);
     const response = await fetch(url);
     console.log("passou");
@@ -43,7 +43,7 @@ function App() {
     const age = e.target.age.value;
     const newUser = {name, age};
     console.log(newUser)
-    fetch('http://ec2-3-217-115-32.compute-1.amazonaws.com:8000/users', {
+    fetch('/users', {
       method: 'POST',
       body: JSON.stringify(newUser),
       headers: {
