@@ -7,11 +7,11 @@ function App() {
   const [data, setData] = useState([]);
 
 
-  // useEffect(() => {
+  useEffect(() => {
 
-  //   teste();
+    teste();
 
-  // });
+  });
 
   // useEffect(() => {
   //   fetch('http://ec2-3-217-115-32.compute-1.amazonaws.com:8000/users')
