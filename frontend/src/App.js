@@ -20,7 +20,7 @@ function App() {
   },
 
 
-  //  []);
+   []);
 
   // const teste = async () => {
   //   console.log('teste');
