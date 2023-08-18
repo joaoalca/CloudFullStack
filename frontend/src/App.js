@@ -7,12 +7,6 @@ function App() {
   const [data, setData] = useState([]);
 
 
-  // useEffect(() => {
-
-  //   teste();
-
-  // });
-
   useEffect(() => {
     fetch('http://ec2-3-217-115-32.compute-1.amazonaws.com:8000/users')
     .then(response => response.json())
@@ -21,11 +15,8 @@ function App() {
       if (Array.isArray(data)) {
         // Assuming the array has at least one element
         const firstElement = data[0];
-        console.log('ID:', firstElement.id);
-        console.log('Username:', firstElement.username);
-        console.log('Create Date:', firstElement.createDate);
-        console.log('Age:', firstElement.age);
-        setData(firstElement);
+        console.log(firstElement);
+        //setData(firstElement);
       }
     })
     .catch(error => {
@@ -36,16 +27,6 @@ function App() {
 
 
    []);
-
-  // const teste = async () => {
-  //   console.log('teste');
-  //   const url = 'http://ec2-3-217-115-32.compute-1.amazonaws.com:8000/users';
-  //   console.log(url);
-  //   const response = await fetch(url);
-  //   console.log("passou");
-  //   let data = await r
-
-  // }
 
   let users = data.map((user) => {
     return <User key={user.id} name={user.username} age={user.age} date={user.createDate} />
