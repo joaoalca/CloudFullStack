@@ -14,11 +14,11 @@ function App() {
   // });
 
   useEffect(() => {
-    fetch('your-api-url')
+    fetch('http://ec2-3-217-115-32.compute-1.amazonaws.com:8000/users')
     .then(response => response.json())
     .then(data => {
       // 'data' is the resolved JSON data from the API response
-      if (Array.isArray(data.json())) {
+      if (Array.isArray(data)) {
         // Assuming the array has at least one element
         const firstElement = data[0];
         console.log('ID:', firstElement.id);
