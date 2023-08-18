@@ -24,13 +24,12 @@ function App() {
 
   const teste = async () => {
     console.log('teste');
-    const url = 'http://10.0.132.252:8000/users';
+    const url = '/users';
     console.log(url);
     const response = await fetch(url);
     console.log("passou");
     const data = await response;
     console.log(data);
-    setData(data);
 
   }
 
