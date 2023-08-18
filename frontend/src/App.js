@@ -27,7 +27,7 @@ function App() {
     const url = 'http://ec2-3-217-115-32.compute-1.amazonaws.com:8000/users';
     console.log(url);
     const response = await fetch(url);
-    console.log(url);
+    console.log("passou");
     const data = await response;
     console.log(data);
 
