@@ -4,7 +4,7 @@ import User from './components/User.js';
 
 function App() {
 
-  const [data, setData] = useState([]);
+  const [data, setData] = useState({});
 
 
   useEffect(() => {
@@ -16,7 +16,7 @@ function App() {
         // Assuming the array has at least one element
         const firstElement = data[0];
         console.log(firstElement);
-        //setData(firstElement);
+        setData(firstElement);
       }
     })
     .catch(error => {
