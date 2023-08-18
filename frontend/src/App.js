@@ -29,7 +29,10 @@ function App() {
     const response = await fetch(url);
     console.log("passou");
     const data = await response;
-    console.log(data.json());
+    data = data.json();
+    for (let i = 0; i < data.length; i++) {
+      console.log(data[i]);
+    }
 
   }
 
