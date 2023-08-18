@@ -7,6 +7,13 @@ var app = express();
 app.use(express.json());
 
 dotenv.config();
+// Middleware to enable CORS
+app.use(function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*'); // Allow requests from any origin
+    res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE'); // Allowed HTTP methods
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept'); // Allowed headers
+    next();
+  });
 
 const dbConfig = {
     host: process.env.DB_HOST,
