@@ -30,6 +30,7 @@ function App() {
     console.log("passou");
     const data = await response;
     console.log(data);
+    setData(data);
 
   }
 
