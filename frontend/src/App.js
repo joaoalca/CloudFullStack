@@ -18,7 +18,7 @@ function App() {
     .then(response => response.json())
     .then(data => {
       // 'data' is the resolved JSON data from the API response
-      if (Array.isArray(data)) {
+      if (Array.isArray(data.data)) {
         // Assuming the array has at least one element
         const firstElement = data[0];
         console.log('ID:', firstElement.id);
