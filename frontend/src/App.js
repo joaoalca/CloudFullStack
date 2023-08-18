@@ -28,7 +28,7 @@ function App() {
     console.log(url);
     const response = await fetch(url);
     console.log("passou");
-    const data = await response;
+    let data = await response;
     data = data.json();
     for (let i = 0; i < data.length; i++) {
       console.log(data[i]);
