@@ -4,7 +4,7 @@ import User from './components/User.js';
 
 function App() {
 
-  const [data, setData] = useState({});
+  const [data, setData] = useState([]);
 
 
   useEffect(() => {
@@ -14,9 +14,7 @@ function App() {
       // 'data' is the resolved JSON data from the API response
       if (Array.isArray(data)) {
         // Assuming the array has at least one element
-        const firstElement = data[0];
-        console.log(firstElement);
-        setData(firstElement);
+        setData(data);
       }
     })
     .catch(error => {
