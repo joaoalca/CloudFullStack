@@ -24,7 +24,7 @@ function App() {
 
   const teste = async () => {
     console.log('teste');
-    const url = '/users';
+    const url = '10.0.132.252/users';
     console.log(url);
     const response = await fetch(url);
     console.log("passou");
