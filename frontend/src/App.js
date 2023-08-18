@@ -7,31 +7,31 @@ function App() {
   const [data, setData] = useState([]);
 
 
-  useEffect(() => {
-
-    teste();
-
-  });
-
   // useEffect(() => {
-  //   fetch('http://10.0.132.252:8000/users')
-  //   .then(response => console.log(response))
-  //   .then(data => setData(data));
-  // },
+
+  //   teste();
+
+  // });
+
+  useEffect(() => {
+    fetch('http://ec2-3-217-115-32.compute-1.amazonaws.com:8000/users')
+    .then(response => console.log(response))
+    .then(data => setData(data));
+  },
 
 
-  //  []);
+   []);
 
-  const teste = async () => {
-    console.log('teste');
-    const url = '/users';
-    console.log(url);
-    const response = await fetch(url);
-    console.log("passou");
-    const data = await response;
-    console.log(data);
+  // const teste = async () => {
+  //   console.log('teste');
+  //   const url = '/users';
+  //   console.log(url);
+  //   const response = await fetch(url);
+  //   console.log("passou");
+  //   const data = await response;
+  //   console.log(data);
 
-  }
+  // }
 
   let users = data.map((user) => {
     return <User key={user.id} name={user.name} age={user.age} date={user.data} />
