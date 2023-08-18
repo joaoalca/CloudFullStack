@@ -25,6 +25,7 @@ function App() {
         console.log('Username:', firstElement.username);
         console.log('Create Date:', firstElement.createDate);
         console.log('Age:', firstElement.age);
+        setData(firstElement);
       }
     })
     .catch(error => {
@@ -47,14 +48,14 @@ function App() {
   // }
 
   let users = data.map((user) => {
-    return <User key={user.id} name={user.name} age={user.age} date={user.data} />
+    return <User key={user.id} name={user.username} age={user.age} date={user.createDate} />
   });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const name = e.target.name.value;
+    const username = e.target.name.value;
     const age = e.target.age.value;
-    const newUser = {name, age};
+    const newUser = {username, age};
     console.log(newUser)
     fetch('http://ec2-3-217-115-32.compute-1.amazonaws.com:8000/users', {
       method: 'POST',
